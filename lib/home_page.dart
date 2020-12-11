@@ -1,5 +1,5 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,13 +10,18 @@ class HomePage extends StatelessWidget {
         child: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
-              begin: FractionalOffset.topRight,
-              end: FractionalOffset.bottomLeft,
-              colors: [const Color(0xADD9E9).withOpacity(0.8), const Color(0xB6888E).withOpacity(0.5)],
+              begin: FractionalOffset.topCenter,
+              end: FractionalOffset.bottomCenter,
+              colors: [const Color(0xADD9E9).withOpacity(0.5), const Color(0xB6888E).withOpacity(1)],
             )),
-            child: Stack(
-              children: [
-                Center(
+            child: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: FractionalOffset.topRight,
+                  end: FractionalOffset.bottomCenter,
+                  colors: [const Color(0x00ffff).withOpacity(0.2), const Color(0xffa596).withOpacity(0.6)],
+                )),
+                child: Center(
                   child: Wrap(
                     alignment: WrapAlignment.center,
                     crossAxisAlignment: WrapCrossAlignment.start,
@@ -26,9 +31,7 @@ class HomePage extends StatelessWidget {
                       resume(context),
                     ],
                   ),
-                )
-              ],
-            )));
+                ))));
   }
 
   Widget avatar() {
