@@ -8,19 +8,19 @@ ThemeData get appTheme {
               fontSize: 24,
               fontFamily: "AppFontFamily",
               color: Colors.black,
-              fontWeight: FontWeight.w200,
+              fontWeight: FontWeight.w400,
             ),
             bodyText1: TextStyle(
-              fontSize: 16,
-              // fontFamily: "AppFontFamily",
+              fontSize: 18,
+              fontFamily: "AppFontFamily",
               color: Colors.black,
-              fontWeight: FontWeight.w200,
+              fontWeight: FontWeight.w400,
             ),
         bodyText2: TextStyle(
-          fontSize: 14,
-          // fontFamily: "AppFontFamily",
+          fontSize: 16,
+          fontFamily: "AppFontFamily",
           color: Colors.black,
-          fontWeight: FontWeight.w200,
+          fontWeight: FontWeight.w400,
         ),
           ));
 }
