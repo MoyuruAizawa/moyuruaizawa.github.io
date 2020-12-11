@@ -17,21 +17,13 @@ class HomePage extends StatelessWidget {
             child: Stack(
               children: [
                 Center(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
+                  child: Wrap(
+                    alignment: WrapAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.start,
+                    runAlignment: WrapAlignment.center,
                     children: [
-                      Wrap(
-                        alignment: WrapAlignment.center,
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        runAlignment: WrapAlignment.center,
-                        spacing: 16,
-                        children: [
-                          avatar(),
-                          resume(context),
-                        ],
-                      ),
-                      textButtons(context)
+                      avatar(),
+                      resume(context),
                     ],
                   ),
                 )
@@ -40,18 +32,20 @@ class HomePage extends StatelessWidget {
   }
 
   Widget avatar() {
-    return CircleAvatar(
-      backgroundImage: AssetImage('assets/avatar.png'),
-      backgroundColor: Colors.transparent,
-      radius: 85,
-    );
+    return Container(
+        margin: EdgeInsets.only(right: 16, bottom: 16),
+        child: CircleAvatar(
+          backgroundImage: AssetImage('assets/avatar.png'),
+          backgroundColor: Colors.transparent,
+          radius: 80,
+        ));
   }
 
   Widget resume(BuildContext context) {
     return Wrap(
       alignment: WrapAlignment.start,
       direction: Axis.vertical,
-      spacing: 4,
+      spacing: 2,
       children: [
         Text('Moyuru Aizawa', style: Theme.of(context).textTheme.headline1),
         Text('Software Engineer', style: Theme.of(context).textTheme.bodyText1),
@@ -61,18 +55,6 @@ class HomePage extends StatelessWidget {
         Text('04.2017  CyberAgent Inc.', style: Theme.of(context).textTheme.bodyText1),
         Text('05.2016  Eureka Inc.', style: Theme.of(context).textTheme.bodyText1),
         Text('09.2014  H.I.C. Inc.', style: Theme.of(context).textTheme.bodyText1),
-      ],
-    );
-  }
-
-  Widget textButtons(BuildContext context) {
-    return Wrap(
-      direction: Axis.vertical,
-      alignment: WrapAlignment.start,
-      crossAxisAlignment: WrapCrossAlignment.start,
-      runAlignment: WrapAlignment.start,
-      spacing: 4,
-      children: [
         SizedBox(height: 8),
         textButton(context, 'Twitter', "https://twitter.com/MoyuruAizawa"),
         textButton(context, 'GitHub', "https://github.com/MoyuruAizawa"),
